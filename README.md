@@ -17,6 +17,9 @@ To further improve this structure, I have written a custom layer for Tensorflow 
 
 To see the implementation I have created a notebook with the basic use of my 'separation factor' . The VAE is trained on MNIST numbers. You will see that as you traverse through the latent dimension as a single one-hot array you can specify how a given reconstruction can be changed to another number. 
 
+### Example Implementation
+----
+
 <a href = "https://github.com/pluu2/SeparationFactor/blob/master/Conditional_VAEs_with_K_Sparse.ipynb"> Basic Implementation</a> 
 
 
