@@ -1,3 +1,5 @@
+![VAEimage](https://github.com/pluu2/SeparationFactor/blob/master/images/1t9s1.png)
+
 ### SeparationFactor
 ----
 
@@ -11,14 +13,27 @@ Current methods on attempting to improve unsupervised disentanglement have focus
 
 Another avenue of investigation involves supervised disnetanglement, which focuses on modifying the liklihood function of VAEs, by implementing an inductive bias on the posterior. This bias comes in the form of an additional condition on the liklihood function (p(x|z,c)). Specifically by adding a classifier to the encoder, one can add 'structure' to the posterior distribution [5]. 
 
-To further improve this structure, I have written a custom layer for Tensorflow which can be added between a classifier and a latent variable to boost the separation between different latent variables. I originally named this 'separation factor', but I found this later to be known as K-Sparse [6]. 
+To further improve this structure, I have written a custom layer for Tensorflow which can be added between a classifier and a latent variable to boost the separation between different latent variables. I originally named this 'separation factor', but I found this later to be known as K-Sparse [6].  
 
-To see the implementation I have created a notebook with the basic use of my 'separation factor' 
+To see the implementation I have created a notebook with the basic use of my 'separation factor' . The VAE is trained on MNIST numbers. You will see that as you traverse through the latent dimension as a single one-hot array you can specify how a given reconstruction can be changed to another number. 
+
 <a href = "https://github.com/pluu2/SeparationFactor/blob/master/Conditional_VAEs_with_K_Sparse.ipynb"> Basic Implementation</a> 
 
 
+Below is a step wise change of the image of a '1' transforming into a '4'. The original dataset did not contain any of the resulting image except the first image. The transformation was learned by the network, with clean separation. 
+
+![VAEimage](https://github.com/pluu2/SeparationFactor/blob/master/images/1t4s1.png)
 
 
+![VAEimage](https://github.com/pluu2/SeparationFactor/blob/master/images/1t4s2.png)
+
+
+![VAEimage](https://github.com/pluu2/SeparationFactor/blob/master/images/1t4s3.png)
+
+
+To do: 
+[x] Basic Implementation on MNIST
+[ ] Demonstrate Quantiative Disentanglement. 
 
 
 References:
