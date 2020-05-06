@@ -11,7 +11,7 @@ There is signficant work being done on modifying VAEs in such a way to improve h
 
 Current methods on attempting to improve unsupervised disentanglement have focused primarily on using alternative liklihood functions[3][4].
 
-Another avenue of investigation involves supervised disnetanglement, which focuses on modifying the liklihood function of VAEs, by implementing an inductive bias on the posterior. This bias comes in the form of an additional condition on the liklihood function (p(x|z,c)). Specifically by adding a classifier to the encoder, one can add 'structure' to the posterior distribution [5]. 
+Another avenue of investigation involves supervised disnetanglement, which focuses on modifying the liklihood function of VAEs, by implementing an inductive bias on the prior. This bias comes in the form of an additional condition on the liklihood function (p(x|z,c)). Specifically by adding a classifier to the encoder, one can add 'structure' to the posterior distribution [5]. 
 
 
 To further improve this structure, I have written a custom layer for Tensorflow which can be added between a classifier and a latent space to boost the separation between different latent variables. I originally named this 'separation factor', but I found this later to be known as K-Sparse [6].  
